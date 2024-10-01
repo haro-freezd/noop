@@ -1,8 +1,8 @@
 package noop.interpreter;
 
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
 
 /**
  * @author Alex Eagle (alexeagle@google.com)

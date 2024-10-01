@@ -16,13 +16,15 @@
 
 package noop.interpreter;
 
-import com.google.inject.Guice;
-import com.google.inject.Injector;
+import static org.junit.Assert.assertEquals;
+
+import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.UUID;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 import noop.graph.Controller;
 import noop.interpreter.config.InterpreterModule;
@@ -33,7 +35,6 @@ import noop.model.Project;
 import noop.operations.NewProjectOperation;
 import noop.persistence.LibraryRepository;
 import noop.stdlib.StandardLibraryBuilder;
-import static org.junit.Assert.assertEquals;
 
 /**
  * @author alexeagle@google.com (Alex Eagle)
@@ -50,7 +51,7 @@ public class InterpreterSystemTest {
   }
 
   @Test public void shouldRunTheHelloWorldProgram() throws Exception {
-    UUID uuid = UUID.randomUUID();    
+    UUID uuid = UUID.randomUUID();
     Project project = new Project("Hello World", "com.example", "");
     project.addLibrary(new Library(uuid, "hello")).addFunction(new Function("go"));
     controller.addProject(new NewProjectOperation(project));

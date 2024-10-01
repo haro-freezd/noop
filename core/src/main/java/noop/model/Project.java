@@ -16,13 +16,13 @@
 
 package noop.model;
 
+import java.util.List;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
-import java.util.List;
 
 import noop.graph.ModelVisitor;
 
@@ -39,7 +39,7 @@ public class Project extends LanguageElement<Project> {
   public String getCopyright() {
     return copyright;
   }
-  
+
   public String getName() {
     return name;
   }
@@ -58,7 +58,7 @@ public class Project extends LanguageElement<Project> {
     this.libraries.add(library);
     return library;
   }
-  
+
   @Override
   public int hashCode() {
     return new HashCodeBuilder()

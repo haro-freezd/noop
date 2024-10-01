@@ -19,6 +19,7 @@ package noop.persistence;
 import com.google.inject.Inject;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.security.AnyTypePermission;
 
 import java.io.PrintStream;
 import java.io.Reader;
@@ -42,6 +43,10 @@ public class ModelSerializer {
   public ModelSerializer(SerializationFormat serializationFormat, XStream xStream) {
     this.serializationFormat = serializationFormat;
     this.xStream = xStream;
+    if (this.xStream != null) {
+      this.xStream.addPermission(AnyTypePermission.ANY);
+      this.xStream.allowTypes(new Class[] { noop.model.Library.class });
+    }
   }
 
   public enum SerializationFormat {
@@ -70,6 +75,6 @@ public class ModelSerializer {
   }
 
   public Library read(Reader libraryFile) {
-    return (Library) xStream.fromXML(libraryFile);    
+    return (Library) xStream.fromXML(libraryFile);
   }
 }

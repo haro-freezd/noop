@@ -70,7 +70,7 @@ public class Interpreter {
     if (entryPoint == null) {
       throw new IllegalArgumentException("No block found named " + options.getEntryPoint());
     }
-    
+
     System.out.println("entryPoint to execute: " + entryPoint.name);
     return 0;
   }

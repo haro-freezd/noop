@@ -16,10 +16,12 @@
 
 package noop.interpreter;
 
+import org.kohsuke.args4j.CmdLineException;
+
 import com.google.inject.Guice;
+
 import noop.interpreter.config.CommandLineOptions;
 import noop.interpreter.config.InterpreterModule;
-import org.kohsuke.args4j.CmdLineException;
 
 /**
  * @author alexeagle@google.com (Alex Eagle)

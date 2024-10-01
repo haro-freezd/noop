@@ -16,16 +16,16 @@
 
 package noop.graph;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 import java.util.UUID;
+
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 /**
  * A vertex in the semantic graph, which allows serializable references to language elements.
  * Each vertex is addressable by the library that contains it, and the index of the vertex within the library.
  * Edges have one Vertex as their source and one as the destination.
- * 
+ *
  * @author alexeagle@google.com (Alex Eagle)
  */
 public class Vertex {
